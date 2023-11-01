@@ -1,0 +1,15 @@
+apiVersion: apps.nri.io/v1alpha1
+kind: PluginConfig
+metadata:
+  labels:
+    app.kubernetes.io/name: pluginconfig
+    app.kubernetes.io/instance: pluginconfig-sample
+    app.kubernetes.io/part-of: nri-plugins-unified-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: nri-plugins-unified-operator
+  name: pluginconfig-sample
+spec:
+  pluginName: balloons
+  pluginVersion: "v0.2.3"
+  pluginNamespace: "kube-system"
+  pluginValuesFile: "/path/to/values.yaml"
