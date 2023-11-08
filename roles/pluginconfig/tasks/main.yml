@@ -13,7 +13,7 @@
     values_files: "{{ pluginValuesFile }}"
     wait: True
     create_namespace: True
-  when: name == "topology-aware"
+  when: pluginName == "topology-aware"
 
 - name: Deploy nri-resource-policy-balloons plugin
   kubernetes.core.helm:
@@ -24,7 +24,7 @@
     values_files: "{{ pluginValuesFile }}"
     wait: True
     create_namespace: True
-  when: name == "balloons"
+  when: pluginName == "balloons"
 
 - name: Deploy nri-memory-qos plugin
   kubernetes.core.helm:
@@ -35,7 +35,7 @@
     values_files: "{{ pluginValuesFile }}"
     wait: True
     create_namespace: True
-  when: "{{ pluginName }}" == "memory-qos"
+  when: pluginName == "memory-qos"
 
 - name: Deploy nri-memtierd plugin
   kubernetes.core.helm:
@@ -46,4 +46,4 @@
     values_files: "{{ pluginValuesFile }}"
     wait: True
     create_namespace: True
-  when: "{{ pluginName }}" == "memtierd"
+  when: pluginName == "memtierd"
